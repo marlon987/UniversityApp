@@ -93,8 +93,8 @@ namespace UniversityApp.ViewModels
                 this.LastName = this.FirstMidName = string.Empty;
                 this.EnrollmentDate = DateTime.UtcNow;
 
-                //Application.Current.MainPage = new NavigationPage(new StudentPage());
-                
+                await Application.Current.MainPage.Navigation.PopAsync();
+
             }
             catch (Exception ex)
             {

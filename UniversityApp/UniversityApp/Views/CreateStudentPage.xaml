@@ -35,10 +35,12 @@
                     <Label FontAttributes="Bold" Text="Enrollment Date" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"></Label>
                     <DatePicker    
                        FontAttributes="Bold"
+                       MinimumDate="01/01/1960"
+                       MaximumDate="01/01/2100"
                        Grid.Row="2" 
                        Grid.Column="1"
                         
-                       ></DatePicker>
+                     Date="{Binding EnrollmentDate}"  ></DatePicker>
 
 
 

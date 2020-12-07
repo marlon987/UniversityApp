@@ -91,9 +91,9 @@ namespace UniversityApp.ViewModels
 
 
                 this.LastName = this.FirstMidName = string.Empty;
-                
+                await Application.Current.MainPage.Navigation.PopAsync();
 
-                
+
             }
             catch (Exception ex)
             {
