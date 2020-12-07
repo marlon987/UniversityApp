@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversityApp.Views.EditStudentPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding EditStudent}">
+            <StackLayout Padding="15">
+
+                <Label FontAttributes="Bold"
+                       Text="Edit Student"
+                       FontSize="Title"
+                       HorizontalOptions="Center"
+                       TextColor="DarkOliveGreen"></Label>
+
+                <Grid Margin="10, 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label FontAttributes="Bold" Text="Last Name" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"></Label>
+                    <Entry Keyboard="Text" 
+                       Grid.Row="0" 
+                       Grid.Column="1"
+                       Text="{Binding Student.LastName}"></Entry>
+
+                    <Label FontAttributes="Bold" Text="FirstMidName" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"></Label>
+                    <Entry Grid.Row="1" 
+                       Grid.Column="1"
+                       Text="{Binding Student.FirstMidName}"></Entry>
+
+                    <Label FontAttributes="Bold" Text="Enrollment Date" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"></Label>
+                    <DatePicker    
+                       FontAttributes="Bold"
+                       Grid.Row="2" 
+                       Grid.Column="1"
+                        
+                        Date="{Binding Student.EnrollmentDate}"></DatePicker>
+                </Grid>
+
+                <Button FontAttributes="Bold"
+                        Text="Save"
+                        CornerRadius="23"
+                        HeightRequest="46"
+                        BackgroundColor="DarkSalmon"
+                        TextColor="White"
+                        Command="{Binding SaveCommand}"
+                        IsEnabled="{Binding IsEnabled}"></Button>
+
+                <ActivityIndicator IsRunning="{Binding IsRunning}"></ActivityIndicator>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
